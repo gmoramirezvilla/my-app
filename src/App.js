@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from './components/Search';
+import Wishlist from './components/WishList';
+import BookContextProvider from './context/BookContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BookContextProvider>
+        <div class="split left">
+          <Search class="split left" /> 
+        </div>
+        <div class="split right">
+          <Wishlist />
+        </div>
+      </BookContextProvider>
     </div>
   );
 }
